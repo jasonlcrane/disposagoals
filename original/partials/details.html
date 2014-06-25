@@ -1,0 +1,28 @@
+<section class="goalinfo scrollable-content">
+	<div class="navigation">
+		<a class="topcoat-button--quiet--off" href="/#list">All goals</a>
+		<a class="topcoat-button--quiet--off" href="/#new">Add new goal</a>
+	</div>
+	<div class="goal cf" ng-model="goals">
+		<div class="detail-navigation" ng-if="goals.length > 1">
+			<a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+			<a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+		</div>
+		<div class="progress">
+			<span class="current-progress" style="width: {{((goals[whichItem].goal_number - completeGoalsCount(goals[whichItem]))/goals[whichItem].goal_number * 100)}}%;"></span>
+		</div>
+		<h1>{{completeGoalsCount(goals[whichItem])}} {{goals[whichItem].goal_type}} to go</h1>
+
+		<div class="info">
+			<h3>You've done {{goals[whichItem].goal_number - completeGoalsCount(goals[whichItem])}} of {{goals[whichItem].goal_number}} </h3>
+			<h3>You have until {{goals[whichItem].goal_due | date: 'shortDate'}}</h3>
+		</div>
+		<p ng-show="completeGoalsCount(goals[whichItem]) > 0" ng-click="toggleComplete()">
+			Toggle completed {{goals[whichItem].goal_type}}
+		</p>
+		<ul class="i-goals">
+			<li ng-show="isComplete(goals[whichItem].i_goals[$index].i_goal_complete) || showComplete" class="i-goal {{goals[whichItem].i_goals[$index].i_goal_complete}}" ng-repeat="i_goal in goals[whichItem].i_goals track by $index"><span ng-click="completeGoal($index, goals[whichItem])">{{i_goal.i_goal_num}}</span></li>
+		</ul>
+	</div>
+	
+</section>

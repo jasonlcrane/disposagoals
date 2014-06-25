@@ -1,0 +1,22 @@
+<section class="page-wrapper" ng-controller="NewController">
+	<form ng-submit="create()">
+		<div class="page-header">
+			<h2>Add a new goal</h2>
+		</div>
+		<div class="form-group input">
+			<label for="goal-name">Goal name</label>
+			<input class="form-control" required type="text" name="goal_type" ng-model="goal_type" placeholder="e.g. Push-ups">
+		</div>
+		<div class="form-group input">
+			<label for="goal-name">Goal number</label>
+			<input class="form-control" required type="text" name="goal_type" ng-model="goal_number" placeholder="100">
+		</div>
+		<div class="form-group input">
+			<label for="goal-name">Goal due date</label>
+			<input class="form-control" required type="date" name="goal_type" ng-model="goal_due" placeholder="06/31/2014">
+		</div>
+		<input type="submit" class="btn btn-primary">
+		<a href="/" class="btn btn-link">Back</a>
+	</form>
+
+</section>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>Disposagoals - Simple Mean App</title>
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css">
+	<link rel="stylesheet" href="libs/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/angular-resource/angular-resource.min.js"></script>
+	<!-- APP JS -->
+	<script src="js/app.js"></script>
+	<script src="js/services/goal.js"></script>
+	
+	<script src="js/routes/dspg-routes.js"></script>
+	<script src="js/controllers/dspg-controller.js"></script>
+	<script src="libs/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+</head>
+<body ng-app="dspg" ng-controller="MainController">
+	
+	<!-- HEADER -->
+	<div class="navbar navbar-app navbar-absolute-top">
+
+      <!-- <div class="btn-group pull-left">
+	    <div class="btn btn-navbar">
+	       <a href="/"><i class="fa fa-home">Home</i></a>
+	    </div>
+	  </div> -->
+
+      <div class="navbar-brand navbar-brand-left">
+	    <a href="/"><i class="fa fa-smile-o"></i>Disposagoals</a>
+	  </div>
+
+
+	  <div class="btn-group pull-right">
+	    <div class="btn btn-navbar">
+	       <a href="/new"><i class="fa fa-plus"></i> New Goal</a>
+	    </div>
+	  </div>
+
+     
+  </div>
+
+  
+	<div class="app-body scrollable" ng-view></div>
+</body>
+</html>

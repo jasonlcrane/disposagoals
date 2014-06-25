@@ -1,0 +1,8 @@
+{
+    "development": {
+        "db_url": "mongodb://localhost/goals-dev"
+    },
+    "production": {
+        "db_url": "mongodb://disposagoal:cxzaq123@kahana.mongohq.com:10086/disposagoal_dev"
+    }
+}

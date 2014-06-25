@@ -1,0 +1,26 @@
+<section class="page-wrapper">
+	<div class="goals">
+		<div class="page-header">
+			<h2>Your goals</h2>
+		</div>
+		<div class="goals-list list-group">
+				
+				<a class="list-group-item goal cf" ng-animate="animate" ng-repeat="item in goals track by $index" ng-hide="!goals.length" href="/{{item._id}}"> <!-- goals.indexOf(item) -->
+					<span class="badge">{{incompleteGoalCount(item)}}</span>	
+						{{item.goal_number}} {{item.goal_type}}
+						<!-- p><strong>Due date:</strong> {{item.goal_due | date: 'shortDate'}}</p -->
+						<!-- p><strong>Days left: {{daysTillDue(item)}}</strong> </p -->
+						
+				</a>
+			<div class="cf" ng-animate="animate" ng-hide="goals.length">
+				<div class="info">
+					<h4>Ready to set your goal?</h4>
+					<p>Disposagoal helps you set acheivable goals, and helps you track your progress as you go.</p>
+					<a role="button" href="/new" class="btn btn-primary btn-lg">Add your first goal</a>				
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+</section>

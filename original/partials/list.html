@@ -1,0 +1,29 @@
+<section class="goalspage">
+	<div class="goals">
+		<!-- h2>Your goals</h2 -->
+		<ul class="goals-list">
+			<li class="goal cf days-left-{{daysTillDue(item)}}" ng-animate="animate" ng-repeat="item in goals track by $index" ng-hide="!goals.length">
+				<a href="/#details/{{goals.indexOf(item)}}">
+					<div class="info">
+						<h2>{{item.goal_type}}</h2>
+						<p><strong>Total:</strong> {{item.goal_number}}</p>
+						<!-- p><strong>Left:</strong> {{completeGoalsCount(item)}}</p -->
+						<p><strong>Due date:</strong> {{item.goal_due | date: 'shortDate'}}</p>
+						<p><strong>Days left:</strong> {{daysTillDue(item)}}</p>
+						
+					</div>
+				</a>
+			</li>
+			<li class="cf" ng-animate="animate" ng-hide="goals.length">
+				<div class="info">
+					<h4>Ready to set your goal?</h4>
+					<p>Disposagoal helps you set acheivable goals, and helps you track your progress as you go.</p>					
+				</div>
+			</li>
+		</ul>
+		<div class="bottom-nav">
+			<a class="topcoat-button--cta" href="/projects/disposagoal/#new">Add new</a>
+		</div>
+	</div>
+
+</section>

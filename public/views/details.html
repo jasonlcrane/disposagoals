@@ -1,0 +1,45 @@
+<section class="page-wrapper scrollable-content">
+	<div class="">
+		<!-- div class="detail-navigation" ng-if="goals.length > 1">
+			<a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+			<a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+		</div -->
+		
+		<div class="page-header">
+			<h1>{{completeGoalCount(goal)}} {{goal.goal_type | lowercase}} to go <span class="label label-info">Due {{goal.goal_due | date: 'shortDate'}}</span></h1>
+
+		</div>
+
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{((goal.goal_number - completeGoalCount(goal))/goal.goal_number * 100)}}%;">
+				<span class="sr-only">{{((goal.goal_number - completeGoalCount(goal))/goal.goal_number * 100)}}%</span>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12 col-sm-8">
+				<form class="update-complete details-form" ng-submit="completeGoalCustom()">
+					<label>How many more {{goal.goal_type | lowercase}}?</label>
+					<div class="input-group">
+						<input class="form-control" type="number" ng-model="customUpdate">
+						<span class="input-group-btn">
+					    	<input type="submit" class="btn btn-success" value="Add">
+					    </span>
+					</div>
+				</form>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<div class="details-form">
+					<label>Show completed {{goal.goal_type | lowercase}}</label>
+					<switch ng-model="showComplete"></switch>
+				</div>
+			</div>
+		</div>
+
+		
+		<ul class="i-goals">
+			<li ng-show="isComplete(goal.i_goals[$index].i_goal_complete) || showComplete" class="i-goal {{goal.i_goals[$index].i_goal_complete}}" ng-repeat="i_goal in goal.i_goals track by $index"><span ng-click="completeGoal($index, goal)">{{i_goal.i_goal_num}}</span></li>
+		</ul>
+	</div>
+	
+</section>
